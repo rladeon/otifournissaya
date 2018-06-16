@@ -25,7 +25,7 @@ SECRET_KEY = 'v0nrbt8v3rua^hb$imdi5$$3t1fw6$ant^x)bzgj-$=58#w15i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.17.0.2','213.167.244.66']
+ALLOWED_HOSTS = ['61c9c770cfe4','localhost', '127.0.0.1', '172.17.0.2', '213.167.244.66']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'otifournissaya.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,4 +117,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
+PROJECT_NAME = 'otifournissaya'
+STATICFILES_DIRS =  ['/home/httpd/otifournissaya/staticfiles/css/',
+                     '/home/httpd/otifournissaya/staticfiles/js/',
+                     '/home/httpd/otifournissaya/staticfiles/img/']
+#STATIC_ROOT = '/home/httpd/otifournissaya/static/'
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
